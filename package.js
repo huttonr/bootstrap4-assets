@@ -1,9 +1,9 @@
 
 Package.describe({
-  name: 'huttonr:bootstrap4-assets', // If this is changed then the hard-coded path in plugin/bootstrap4.js must also be changed
+  name: 'huttonr:bootstrap4-assets',
   summary: 'By itself this package does nothing.  It contains assets for use by huttonr:bootstrap4.',
   version: '4.0.0_3',
-  git: ''
+  git: 'https://github.com/huttonr/bootstrap4-assets'
 });
 
 Package.onUse(function(api) {
