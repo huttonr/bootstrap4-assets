@@ -18,12 +18,14 @@ bootstrapJsFiles="$(find assets/bootstrap -not -path '*/\.*' -name '*.js' -type 
 sed '/jsAssets.*=.*/d' -i package.js
 echo "var jsAssets = [$bootstrapJsFiles];" >> package.js
 
-bootstrapJsFilenames="$(find assets/bootstrap -not -path '*/\.*' -name '*.js' -type f -printf "'%f'\n" | grep -v '^$' | paste -s -d ",")"
-sed '/jsAssetNames.*=.*/d' -i serve.js
-echo "var jsAssetNames = [$bootstrapJsFilenames];" >> serve.js
-
 bootstrapScssFiles="$(find assets/bootstrap -not -path '*/\.*' -name '*.scss' -type f -exec echo "'{}'" \; | grep -v '^$' | paste -s -d ',')"
 sed '/scssAssets.*=.*/d' -i package.js
 echo "var scssAssets = [$bootstrapScssFiles];" >> package.js
+
+echo "Generating js filenames for serve.js..."
+
+bootstrapJsFilenames="$(find assets/bootstrap -not -path '*/\.*' -name '*.js' -type f -printf "'%f'\n" | grep -v '^$' | paste -s -d ",")"
+sed '/jsAssetNames.*=.*/d' -i serve.js
+echo "var jsAssetNames = [$bootstrapJsFilenames];" >> serve.js
 
 echo "Done"
