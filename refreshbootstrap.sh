@@ -1,4 +1,6 @@
-echo "Initializing bootstrap submodule..."
+bootstrapVersion="v4.0.0-alpha.2"
+
+echo "Initializing bootstrap submodule... ($bootstrapVersion)"
 git submodule update --init
 
 submodulepath=.git/modules/$(grep -oP "path\s*\=\s*\K(.+)" .gitmodules)
@@ -10,7 +12,7 @@ echo 'js/src/*.js' >> $submodulepath/info/sparse-checkout
 echo 'scss/*.scss' >> $submodulepath/info/sparse-checkout
 echo 'scss/mixins/*.scss' >> $submodulepath/info/sparse-checkout
 
-$(cd $submodulepath; git checkout)
+$(cd $submodulepath; git pull; git checkout $bootstrapVersion)
 
 echo "Generating asset list for package.js..."
 
