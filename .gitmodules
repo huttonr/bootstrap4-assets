@@ -1,3 +1,6 @@
 [submodule "assets/bootstrap"]
 	path = assets/bootstrap
 	url = https://github.com/twbs/bootstrap.git
+[submodule "assets/tether"]
+	path = assets/tether
+	url = https://github.com/HubSpot/tether.git
