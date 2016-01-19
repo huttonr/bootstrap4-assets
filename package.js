@@ -2,7 +2,7 @@
 Package.describe({
   name: 'huttonr:bootstrap4-assets',
   summary: 'By itself this package does nothing.  It contains assets for use by huttonr:bootstrap4.',
-  version: '4.0.0_8',
+  version: '4.0.0_9',
   git: 'https://github.com/huttonr/bootstrap4-assets',
   documentation: 'README.md'
 });
